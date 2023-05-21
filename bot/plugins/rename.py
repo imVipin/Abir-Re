@@ -25,7 +25,7 @@ from bot.core.handlers.time_gap import check_time_gap
 from bot.core.handlers.big_rename import handle_big_rename
 
 
-@Client.on_message(filters.command(["rename", "r"]) & filters.private & ~filters.edited)
+@Client.on_message(filters.private & ~filters.edited)
 async def rename_handler(c: Client, m: Message):
     # Checks
     if not m.from_user:
@@ -39,8 +39,8 @@ async def rename_handler(c: Client, m: Message):
                                quote=True)
             return
     await add_user_to_database(c, m)
-    if (not m.reply_to_message) or (not m.reply_to_message.media) or (not get_file_attr(m.reply_to_message)):
-        return await m.reply_text("Reply to any document/video/audio to rename it!", quote=True)
+    #if (not m.reply_to_message) or (not m.reply_to_message.media) or (not get_file_attr(m.reply_to_message)):
+        #return await m.reply_text("Reply to any document/video/audio to rename it!", quote=True)
 
     # Proceed
     editable = await m.reply_text("Now send me new file name!", quote=True)
