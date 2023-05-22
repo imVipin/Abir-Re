@@ -1,6 +1,6 @@
 # (c) @AbirHasan2005
 
-import asyncio
+"""import asyncio
 from bot.client import Client
 from bot.core.db.add import (
     add_user_to_database
@@ -27,3 +27,4 @@ async def on_media_handler(c: Client, m: "types.Message"):
         disable_web_page_preview=True,
         reply_to_message_id=m.message_id
     )
+"""
